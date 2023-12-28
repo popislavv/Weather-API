@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#weatherForm {
+    margin: 30px auto;
+    padding: 30px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#weatherForm label {
+    font-size: 1.2em;
+    display: block;
+    padding-bottom: 10px;
+}
+
+#weatherForm input[type="text"] {
+    height: 25px;
+    width: 97%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#weatherForm input[type="submit"] {
+    height: 35px;
+    width: 100%;
+    background: #6B9080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#weatherForm input[type="submit"]:hover {
+    background: #8FB9A8;
+    transition: background 0.5s ease;
+}
+
+#weather {
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#tag-error {
+    color: red;
+    font-weight: bold;
+}
+
+
+header {
+    background: #6B9080;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+footer {
+    background: #8FB9A8;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    bottom: 0%;
+}
+
+@media (max-width: 600px) {
+    header, footer {
+        padding: 10px 0;
+    }
+}

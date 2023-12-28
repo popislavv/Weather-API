@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current weather</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<header>
+    <h1>Weather App</h1>
+</header>
 <body>
     
     <form id="weatherForm" action="/" class="form" method="POST">
@@ -13,20 +17,23 @@
         <input type="submit" value="Submit">
     </form>
 
-    <% if(locals.weather) {%>
-    <div id="weather">
-        <h1>Current weather</h1>
-        <h2>City: <%= weather.request.query %><span id="cityName"></span></h2>
-        <h2>Temperature: <%= weather.current.temperature %><span id="temp"></span></h2>
-        <h2>Wind: <%= weather.current.wind_speed %><span id="wind"></span></h2>
-        <h2>Humidity: <%= weather.current.humidity %><span id="humidity"></span></h2>
-    </div>
-    <% }if(locals.error){%>
-        <div id="tag-error" class="tag-error">
-            <%=error%>
-          </div>
+    <% if(weather) {%>
+        <div id="weather">
+            <h1>Current weather</h1>
+            <h2>City: <%= weather.location.name %></h2>
+            <h2>Temperature: <%= weather.current.temperature %>°C</h2>
+            <h2>Wind: <%= weather.current.wind_speed %> km/h</h2>
+            <h2>Humidity: <%= weather.current.humidity %> %</h2>
+        </div>
+        <% } else if(error) {%>
+            <div id="tag-error" class="tag-error">
+                <%= error %>
+            </div>
+        <% } %>
     
-    <%} %>
 
 </body>
+<footer>
+    <p>© 2023 Weather App</p>
+</footer>
 </html>
