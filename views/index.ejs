@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current weather</title>
+</head>
+<body>
+    
+    <form id="weatherForm" action="/" class="form" method="POST">
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <% if(locals.weather) {%>
+    <div id="weather">
+        <h1>Current weather</h1>
+        <h2>City: <%= weather.request.query %><span id="cityName"></span></h2>
+        <h2>Temperature: <%= weather.current.temperature %><span id="temp"></span></h2>
+        <h2>Wind: <%= weather.current.wind_speed %><span id="wind"></span></h2>
+        <h2>Humidity: <%= weather.current.humidity %><span id="humidity"></span></h2>
+    </div>
+    <% }if(locals.error){%>
+        <div id="tag-error" class="tag-error">
+            <%=error%>
+          </div>
+    
+    <%} %>
+
+</body>
+</html>
